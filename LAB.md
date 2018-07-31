@@ -14,9 +14,23 @@
 Write a description of the project in your README.md
 
 ## Submission Instructions
-  * Work in a branch on your fork
-  * Submit a pull request to your forked repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
-  * Submit the Github URL to the backend repo you selected
-  * Submit any necessary `.env` variables for BOTH your backend and front end projects so that TA's can have an easier time configuring their environments
+  * Submit a link to your pull request on canvas: 
+  * Submit a question: do you typically make components that inherit from react.component, or as constructor functions?
+  * observation: making react apps is easy when you're components arent nested 4 deep :-P
+  * and how long you spent: ~4 hours
+  * Submit the Github URL to the backend repo you selected: https://github.com/ashtonkellis/RemindR
+  * Backend ENV variables:
+  ```
+    NODE_ENV=development
+    PORT=3000
+    MONGODB_URI=mongodb://localhost/yourOwnDBNameHere
+    SECRET_KEY=helloWorldkdsjflad
+    TWILIO_ACCOUNT_SID=ACa95d84e8c74b9854d72577673a672dc0
+    TWILIO_AUTH_TOKEN=ad5276912d2a085c1dfd2f052524d9d8
+    TWILIO_NUMBER=+14159414643
+    CORS_ORIGINS=http://localhost
+  ```
+  * Frontend ENV variables:
+  ```
+    API_URL=http://localhost:3000/api
+  ```
