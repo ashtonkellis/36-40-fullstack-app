@@ -34,46 +34,42 @@ class Landing extends React.Component {
       .catch(console.error);
   }
   
-  renderRoot = () => (
-    <div>
-      <h2>Welcome</h2>
-      <ul>
-        <li><Link to="/signup">Sign Up</Link></li>
-        <li><Link to="/login">Login</Link></li>
-      </ul>
-    </div>
-  )
+  render() {
+    const { pathname } = this.props.location;
 
-  renderSignUp = () => (
+    const rootJSX = (
+      <div>
+        <h2>Welcome to this sweet app</h2>
+      </div>
+    );
+
+    const signUpJSX = (
       <div>
         <h2>Sign Up</h2>
         <AuthForm onComplete={ this.handleSignup }/>
         <p>Already have an account?</p>
         <Link to="/login"> Login </Link>
       </div>
-  );
+    );
 
-  renderLogin = () => (
+    const loginJSX = (
       <div>
         <h2> login </h2>
         <AuthForm type="login" onComplete={this.handleLogin} />
         <p> Don&#39;t have an account? </p>
         <Link to="/signup"> signup </Link>
       </div>
-  );
-
-  render() {
-    const { pathname } = this.props.location;
+    );
 
     switch (pathname) {
       case routes.ROOT_ROUTE:
-        return this.renderRoot();
+        return rootJSX;
       case routes.SIGNUP_ROUTE:
-        return this.renderSignUp();
+        return signUpJSX;
       case routes.LOGIN_ROUTE:
-        return this.renderLogin();
+        return loginJSX;
       default:
-        return this.renderRoot();    
+        return null;    
     }
   }
 }
