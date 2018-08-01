@@ -1,5 +1,6 @@
 import superagent from 'superagent';
 import * as routes from '../lib/routes';
+import { cookieDelete } from '../lib/utils';
 
 export const setToken = token => ({
   type: 'TOKEN_SET',
@@ -26,4 +27,9 @@ export const userLogin = user => (store) => {
     .then((response) => {
       return store.dispatch(setToken(response.body.token));
     });
+};
+
+export const logout = () => (store) => {
+  cookieDelete('_token');
+  return store.dispatch(removeToken());
 };

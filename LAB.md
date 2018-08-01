@@ -1,36 +1,19 @@
- ## Testing (don't worry about this today)
-* These testing requirements are not due until the last day of this rolling lab. TA's will *not* take away points for this specific lab if you don't have Cypress tests ready. **However, it is strongly recommended you still write your tests today**. 
-* Use Cypress to test the following scenario:
-    * A user travels to the homepage at `/`
-    * A user clicks `Sign up` on your nav menu to travel to `/signup`
-    * A user fills out a username, email, and password (and any other required properties for your account model) and submits the form
-    * The `Dashboard` page properly appears indicating the user has been authenticated
-    * User travels back to `/login`
-    * User enters their username and password to authorize themselves into the app
-    * The `Dashboard` page properly appears indicating the user has been authorized
- * You must stub your responses and set an `isStubbed` boolean variable in your test. Submit your tests with this boolean set to true so that TA's do not have to make requests to a real server to run your Cypress tests
+## Configuration  
+#### backend
+* Make a new route called `/api/profiles/me` that returns a profile matching the provided `accountId`. Reference [lecture code](https://github.com/codefellows/seattle-javascript-401d25/blob/master/back-end/18-asset-management/aws-s3-asset-mgt/src/router/profile-router.js) for how these routes should be formatted.
  
+## Testing 
+ * No extra testing required today, though **it is strongly recommended to complete the testing for [Lab 36](https://github.com/seattle-javascript-401d25/36-40-fullstack-app#testing-dont-worry-about-this-today)**
+
 ##  Documentation  
 Write a description of the project in your README.md
 
 ## Submission Instructions
-  * Submit a link to your pull request on canvas: 
-  * Submit a question: do you typically make components that inherit from react.component, or as constructor functions?
-  * observation: making react apps is easy when you're components arent nested 4 deep :-P
-  * and how long you spent: ~4 hours
-  * Submit the Github URL to the backend repo you selected: https://github.com/ashtonkellis/RemindR
-  * Backend ENV variables:
-  ```
-    NODE_ENV=development
-    PORT=3000
-    MONGODB_URI=mongodb://localhost/yourOwnDBNameHere
-    SECRET_KEY=helloWorldkdsjflad
-    TWILIO_ACCOUNT_SID=ACa95d84e8c74b9854d72577673a672dc0
-    TWILIO_AUTH_TOKEN=ad5276912d2a085c1dfd2f052524d9d8
-    TWILIO_NUMBER=+14159414643
-    CORS_ORIGINS=http://localhost
-  ```
-  * Frontend ENV variables:
-  ```
-    API_URL=http://localhost:3000/api
-  ```
+  * **This is a rolling lab that that will last through Friday. All subsequent assignments this week require that you have a *mid-term project* or a *substantially finished Lab 18* that implement account and profile creation with basic auth and bearer auth. If, for some reason, those projects are not suitable for these current lab assignments, you may use [Lecture 18](https://github.com/codefellows/seattle-javascript-401d25/tree/master/back-end/18-asset-management) as your backup. *However*, you can only get a maximum of 9 points if you do this.**
+  * Work in a fork of this repository
+  * Work in a branch on your fork
+  * Submit a pull request to your forked repository
+  * Submit a link to your pull request on canvas
+  * Submit a question, observation, and how long you spent on canvas  
+  * Submit the Github URL to the backend repo you selected
+  * Submit any necessary `.env` variables for BOTH your backend and front end projects so that TA's can have an easier time configuring their environments
