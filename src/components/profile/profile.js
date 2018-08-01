@@ -26,12 +26,10 @@ class Profile extends React.Component {
     };
   }
 
-  // TODO: resolve this flash of content
   componentDidMount() {
-    // debugger;
     this.props.fetchProfile()
       .then((response) => {
-        console.log(response, 'what is response');
+        console.log(response, 'FETCH RESPONSE');
       })
       .catch(console.error);
   }
@@ -44,20 +42,47 @@ class Profile extends React.Component {
   }
 
   handleUpdate = (profile) => {
-    // TODO: add validation, i.e. catch blocks
     this.props.updateProfile(profile);
     this.setState({ editing: false });
   }
 
-  renderProfile = (profile) => {
-    const JSXEditing = (
+  // renderProfile = (profile) => {
+  //   const JSXEditing = (
+  //     <div>
+  //       <ProfileForm profile={ profile } onComplete={ this.handleUpdate }/>
+  //       <button onClick={() => this.setState({ editing: false })}>Cancel</button>
+  //     </div>
+  //   );
+
+  //   const JSXDisplay = (
+  //     <div>
+  //       <h2>This is my bio</h2>
+  //       <p>{ profile.bio }</p>
+  //       <button onClick={() => this.setState({ editing: true })}>Edit</button>
+  //     </div>
+  //   );
+
+  //   return (
+  //     <div>
+  //       <h2>{ `${profile.firstName} ${profile.lastName}` }</h2>
+  //       { this.state.editing ? JSXEditing : JSXDisplay }
+  //     </div>
+  //   );
+  // }
+
+  render() {
+    const { profile } = this.props;
+
+    if (!profile) return <ProfileForm onComplete={ this.handleCreate }/>;
+
+    const profileEditJSX = (
       <div>
         <ProfileForm profile={ profile } onComplete={ this.handleUpdate }/>
         <button onClick={() => this.setState({ editing: false })}>Cancel</button>
       </div>
     );
 
-    const JSXDisplay = (
+    const profileDisplayJSX = (
       <div>
         <h2>This is my bio</h2>
         <p>{ profile.bio }</p>
@@ -68,20 +93,16 @@ class Profile extends React.Component {
     return (
       <div>
         <h2>{ `${profile.firstName} ${profile.lastName}` }</h2>
-        { this.state.editing ? JSXEditing : JSXDisplay }
+        { this.state.editing ? profileEditJSX : profileDisplayJSX }
       </div>
     );
-  }
 
-  render() {
-    const { profile } = this.props;
-
-    return (
-      <div className="profile">
-        <h1>Profile</h1>
-        { profile ? this.renderProfile(profile) : <ProfileForm onComplete={ this.handleCreate }/>}
-      </div>
-    );
+    // return (
+    //   <div className="profile">
+    //     <h1>Profile</h1>
+    //     { profile ? this.renderProfile(profile) : <ProfileForm onComplete={ this.handleCreate }/>}
+    //   </div>
+    // );
   }
 }
 
