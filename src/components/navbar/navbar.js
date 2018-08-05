@@ -14,6 +14,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   doLogout: () => dispatch(authActions.logout()),
+  // doLogin: () => dispatch(authActions.login()),
 });
 
 class Navbar extends React.Component {

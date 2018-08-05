@@ -1,8 +1,16 @@
 const cookieFetch = (key) => {
-  return document.cookie
+  const cookies = document.cookie
     .split(';')
     .map(str => str.split('='))
-    .filter(arr => arr[0].trim() === key)[1];
+    .reduce((acc, cur) => {
+      const cookieKey = cur[0];
+      const cookieVal = cur[1];
+
+      acc[cookieKey] = cookieVal;
+      return acc;
+    }, {});
+
+  return cookies[key];
 };
 
 const cookieDelete = (key) => {

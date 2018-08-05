@@ -9,7 +9,6 @@ const mapDispatchToProps = dispatch => ({
   createFile: file => dispatch(createFileApiRequest(file)),
 });
 
-
 class Dashboard extends React.Component {
   render() {
     const { createFile } = this.props;
