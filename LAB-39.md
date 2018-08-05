@@ -28,4 +28,5 @@ Write a description of the project in your README.md
     GOOGLE_OAUTH_SECRET=NhsVDkkzOiNhEMHx6kHdxUsV
     CLINENT_URL=http://localhost:8080
     API_URL=http://localhost:3000/api
+    AWS_BUCKET=ashton-lab-39
   ```
