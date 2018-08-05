@@ -10,14 +10,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cypress run --browser chrome",
     "watch": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint --fix **/*.js",
     "cypress:open": "cypress open",
-    "start": "http-server ./build -a localhost -p 8080 -c-1 &",
-    "pretest": "npm run build && npm run start && wait-on http://localhost:8080",
-    "posttest": "pkill -f http-server"
+    "ci-start": "http-server ./build -a localhost -p 8080 -c-1 &",
+    "start": "npm run build && node index.js",
+    "pretest": "npm run build && npm run ci-start && wait-on http://localhost:8080",
+    "posttest": "pkill -f http-server",
+    "heroku-prebuild": "npm uninstall cypress",
+    "heroku-postbuild": "webpack --progress --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -62,6 +65,7 @@
   },
   "dependencies": {
     "dotenv": "^6.0.0",
+    "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",

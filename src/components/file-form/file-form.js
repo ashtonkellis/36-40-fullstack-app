@@ -64,8 +64,6 @@ export default class FileForm extends React.Component {
     event.preventDefault();
     const { files } = event.dataTransfer;
     const [file] = files;
-    console.log('YOU ARE HERE LINE 67');
-    console.log(files, file, 'FILES & FILE');
     fileToBase64String(file)
       .then((preview) => {
         this.setState({
@@ -76,12 +74,11 @@ export default class FileForm extends React.Component {
           preview,
         });
       })
-      .catch(console.error);
+      .catch(console.error); // eslint-disable-line
   }
 
   handleChange = (event) => {
     const { type, value, files } = event.target;
-    console.log(type, 'TYPE');
     if (type === 'file') {
       const [file] = files;
       fileToBase64String(file)
@@ -94,7 +91,7 @@ export default class FileForm extends React.Component {
             preview,
           });
         })
-        .catch(console.error);
+        .catch(console.error); // eslint-disable-line
     } else {
       this.setState({ title: value });
     }
@@ -106,7 +103,7 @@ export default class FileForm extends React.Component {
       .then(() => {
         this.setState(this.emptyState);
       })
-      .catch(console.error);
+      .catch(console.error); // eslint-disable-line
   }
 
   renderFile = (fileType) => {
