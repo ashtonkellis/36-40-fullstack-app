@@ -1,4 +1,6 @@
-const defaultState = null;
+import { cookieFetch } from '../lib/utils';
+
+const defaultState = cookieFetch('_token') || null;
 
 export default (state = defaultState, { type, payload }) => {
   switch (type) {

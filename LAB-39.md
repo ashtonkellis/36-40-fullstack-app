@@ -1,20 +1,13 @@
   ## Feature Tasks 
-* Create a new component that is a form which has an `<input type="file />` tag, which accepts a file upload
-* Determine the best place in your app this component should go. In lecture, the component was placed in `Dashboard`, but this may not be the best place for you app.
-* Use the File Reader API to show a preview of that file upload
-* Setup new sync and async action creators that make a request to your asset upload route on your backend 
-* Make a new reducer for your asset and remember to place it in your `reducer/main` reducer module that exports `combineRedudcers`
-* Create a `drop zone` in your form component so a user can drag and drop files from their own hard drive with ease 
-* **NOT PROVIDED IN LECTURE CODE, FIGURE THIS OUT ON YOUR OWN**: After succesful upload of your asset to Amazon S3, display your uploaded assets in a list on the page. This may need to be its own component that has access to the Redux store. 
 
-##  Documentation  
+* Create a `drop zone` in your form component so a user can drag and drop files from their own hard drive with ease 
 Write a description of the project in your README.md
  
-  * Submit a pull request to your forked repository
+  * Submit a pull request to your forked repository: 
   * Submit a link to your pull request on canvas: 
-  * Submit a question: 
-  * observation: 
-  * and how long you spent on canvas: 
+  * Submit a question: when you're buildin ga full stack app, do you start with the front end or back end?
+  * observation: its really hard to debug a full stack app. there are a thousand places that things could be going wrong, and hte error messages are 4x as cryptic.
+  * and how long you spent on canvas: ~3 hours
   * Submit the Github URL to the backend repo you selected: https://github.com/ashtonkellis/RemindR
   * frontenv .env variables
   ```
@@ -35,4 +28,5 @@ Write a description of the project in your README.md
     GOOGLE_OAUTH_SECRET=NhsVDkkzOiNhEMHx6kHdxUsV
     CLINENT_URL=http://localhost:8080
     API_URL=http://localhost:3000/api
+    AWS_BUCKET=ashton-lab-39
   ```

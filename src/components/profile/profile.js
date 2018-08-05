@@ -13,7 +13,7 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   createProfile: profile => dispatch(profileActions.createProfileRequest(profile)),
-  updateProfile: profile => dispatch(profileActions.updateProfileRequest(profile)), // we don't have this functionality in Lecture 18 backend
+  updateProfile: profile => dispatch(profileActions.updateProfileRequest(profile)),
   fetchProfile: profile => dispatch(profileActions.fetchProfileRequest(profile)),
 });
 
@@ -46,35 +46,11 @@ class Profile extends React.Component {
     this.setState({ editing: false });
   }
 
-  // renderProfile = (profile) => {
-  //   const JSXEditing = (
-  //     <div>
-  //       <ProfileForm profile={ profile } onComplete={ this.handleUpdate }/>
-  //       <button onClick={() => this.setState({ editing: false })}>Cancel</button>
-  //     </div>
-  //   );
-
-  //   const JSXDisplay = (
-  //     <div>
-  //       <h2>This is my bio</h2>
-  //       <p>{ profile.bio }</p>
-  //       <button onClick={() => this.setState({ editing: true })}>Edit</button>
-  //     </div>
-  //   );
-
-  //   return (
-  //     <div>
-  //       <h2>{ `${profile.firstName} ${profile.lastName}` }</h2>
-  //       { this.state.editing ? JSXEditing : JSXDisplay }
-  //     </div>
-  //   );
-  // }
-
   render() {
     const { profile } = this.props;
 
     if (!profile) return <ProfileForm onComplete={ this.handleCreate }/>;
-
+    
     const profileEditJSX = (
       <div>
         <ProfileForm profile={ profile } onComplete={ this.handleUpdate }/>
@@ -96,13 +72,6 @@ class Profile extends React.Component {
         { this.state.editing ? profileEditJSX : profileDisplayJSX }
       </div>
     );
-
-    // return (
-    //   <div className="profile">
-    //     <h1>Profile</h1>
-    //     { profile ? this.renderProfile(profile) : <ProfileForm onComplete={ this.handleCreate }/>}
-    //   </div>
-    // );
   }
 }
 
