@@ -16,9 +16,9 @@
     "lint": "eslint --fix **/*.js",
     "cypress:open": "cypress open",
     "ci-start": "http-server ./build -a localhost -p 8080 -c-1 &",
-    "start": "npm run build && node index.js",
     "pretest": "npm run build && npm run ci-start && wait-on http://localhost:8080",
     "posttest": "pkill -f http-server",
+    "start": "npm run build && node index.js",
     "heroku-prebuild": "npm uninstall cypress",
     "heroku-postbuild": "webpack --progress --config webpack.prod.js"
   },
@@ -69,6 +69,7 @@
     "file-loader": "^1.1.11",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
-    "superagent": "^3.8.3"
+    "superagent": "^3.8.3",
+    "validator": "^10.5.0"
   }
 }

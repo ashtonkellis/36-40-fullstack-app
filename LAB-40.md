@@ -19,7 +19,6 @@
 * Go to Amazon Cloudfront in your AWS console and create a new CDN for your S3 bucket
 * Go to your Heroku settings of your deployed front end, click on `Config Vars`, and add a variable called `CDN_URL` equal to the AWS Cloudfront domain you generated
 * **Delete your build folder from your local project**
-
  
 ## Testing 
 * Review the prior labs that had testing requirements and **complete those testing requirements when you submit this lab**. 
@@ -33,8 +32,8 @@ Write a description of the project in your README.md.
 ## Submission Instructions
   * Submit a link to your pull request:
   * Submit the following three links
-     * Your deployed Heroku frontend: 
-     * Your deployed Heroku backend: 
+     * Your deployed Heroku frontend: https://dashboard.heroku.com/apps/ashton-lab-36-40-frontend/deploy/github
+     * Your deployed Heroku backend: https://dashboard.heroku.com/apps/ashton-lab-36-40-backend/deploy/github
      * Your Amazon Cloudfront CDN URL, with a pathname to a file that is in your related S3 bucket, i.e, assuming your bucket has an `index.html` file, you would also include: 
        ```
        http://my-generated-cloudfront-cdn-url/index.html
