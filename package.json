@@ -16,9 +16,9 @@
     "lint": "eslint --fix **/*.js",
     "cypress:open": "cypress open",
     "ci-start": "http-server ./build -a localhost -p 8080 -c-1 &",
-    "start": "npm run build && node index.js",
     "pretest": "npm run build && npm run ci-start && wait-on http://localhost:8080",
     "posttest": "pkill -f http-server",
+    "start": "npm run build && node index.js",
     "heroku-prebuild": "npm uninstall cypress",
     "heroku-postbuild": "webpack --progress --config webpack.prod.js"
   },
