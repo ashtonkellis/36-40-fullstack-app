@@ -1,34 +1,32 @@
-## TODO
-- [ ] make sure CORS configuration in S3 is correct (aug 6 @ 9:35). You might need this if you have a problem connecting your deployed app to your S3 bucket
-- [ ] add devlogger function from utils.js
-- [ ] add validation to auth form (vid 10:50);
-## NOTES:
-1. if you see an options method, but not the CRUD method, then you're probably having a problem with CORS
+  * Submit a link to your pull request: 
+  * Your deployed Heroku frontend: https://dashboard.heroku.com/apps/ashton-lab-36-40-frontend/deploy/github
+  * Your deployed Heroku backend: https://dashboard.heroku.com/apps/ashton-lab-36-40-backend/deploy/github
+  * Submit a question: i'm getting an error that i cant figure out when i try to use google signin on the deployed version. it works fine on my machine. any tips would be appreciated :)
+  * observation: there seems to be a ton of choices when it comes to writing react components. its really fun because you get to write code that you find beautiful.
+  * how long you spent: 
+  * Submit the Github URL to the backend repo you selected: 
+  * frontenv .env variables
+  ```
+    API_URL=http://localhost:3000/api
+    GOOGLE_OAUTH_ID=816513421140-3fedtqb77dveh2lj1802702k69jerfjq.apps.googleusercontent.com
+    PORT=3000
 
-## Feature Tasks 
-* Add error handling for a 409 conflict error if a user submits a username or email that is already in the database
-* Deploy your frontend app with these new changes and submit the Heroku URL
-* **Your deployed app must be at an MVP working state to get full credit. The MVP deployed requirements are:**
-    * You must be able to sign up or login and see your `/dashboard` page
-    * You must be able to create AND edit a new profile, and upon logging out and logging in, see that same profile
-    * You must be able to upload photos successfully, and see those photos displayed on the page upon each login session
-    * Remember, cookies are NOT cached on the Heroku free tier, so don't worry about persisting login sessions for now.
-* Because of the cookie restrictions on deployment, Google OAuth will **not work completely**. *However*, you must still have deployed OAuth working at these MVP steps:
-    * User clicks "Sign up with Google"
-    * User sees the Google consent screen
-    * User returns back to the signup/login homepage (because we are unable to store cookies on deployment on the free Heroku tier at this time, so we are unable to go the `/dashboard` page as we properly should)
-
-##  Documentation  
-Write a description of the project in your README.md. 
-
-## Submission Instructions
-  * Continue working from previous labs 36-40
-  * Work in a branch on your fork
-  * Submit a pull request to your forked repository
-  * Submit a link to your pull request on canvas
-  * Submit the following two links
-     * Your deployed Heroku frontend **that reflects the new changes for form validation** 
-     * Your deployed Heroku backend
-  * Submit a question, observation, and how long you spent on canvas  
-  * Submit the Github URL to the backend repo you selected
-  * Submit any necessary `.env` variables for BOTH your backend and front end projects so that TA's can have an easier time configuring their environments
+  ```
+  * backend .env variables
+  ```
+    API_URL=http://localhost:3000/api
+    AWS_ACCESS_KEY_ID=AKIAJYGMXR4M2K42J5MA
+    AWS_BUCKET=ashton-lab-39
+    AWS_SECRET_ACCESS_KEY=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
+    CLIENT_URL=http://localhost:8080
+    CORS_ORIGINS=http://localhost:8080
+    GOOGLE_OAUTH_ID=816513421140-3fedtqb77dveh2lj1802702k69jerfjq.apps.googleusercontent.com
+    GOOGLE_OAUTH_SECRET=NhsVDkkzOiNhEMHx6kHdxUsV
+    MONGODB_URI=mongodb://localhost/remindr
+    NODE_ENV=development
+    PORT=3000
+    SECRET_KEY=helloWorldkdsjflad
+    TWILIO_ACCOUNT_SID=ACa95d84e8c74b9854d72577673a672dc0
+    TWILIO_AUTH_TOKEN=ad5276912d2a085c1dfd2f052524d9d8
+    TWILIO_NUMBER=+14159414643
+  ```

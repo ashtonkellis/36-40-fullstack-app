@@ -1,4 +1,4 @@
-const cookieFetch = (key) => {
+export const cookieFetch = (key) => {
   const cookies = document.cookie
     .split(';')
     .map(str => str.split('='))
@@ -13,8 +13,6 @@ const cookieFetch = (key) => {
   return cookies[key];
 };
 
-const cookieDelete = (key) => {
+export const cookieDelete = (key) => {
   document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
 };
-
-export { cookieFetch, cookieDelete };
